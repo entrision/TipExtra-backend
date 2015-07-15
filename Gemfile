@@ -5,6 +5,8 @@ gem 'rails', '4.2.3'
 gem 'pg'
 
 gem 'devise'
+gem 'simple_token_authentication'
+gem 'active_model_serializers'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
