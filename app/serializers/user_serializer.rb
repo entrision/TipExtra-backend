@@ -1,3 +1,3 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :name, :email, :authentication_token
+  attributes :first_name, :last_name, :email, :authentication_token, :braintree_customer_id
 end

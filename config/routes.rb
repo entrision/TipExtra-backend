@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       devise_scope :user do
+        resources :users, only: [:show, :update, :destroy]
+        resources :menus, only: [:show, :index]
+        resources :orders, only: [:index, :show, :create]
         post :users,  to: 'registrations#create'
       end
     end

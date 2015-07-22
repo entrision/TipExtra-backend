@@ -33,7 +33,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## token authenticatable
       t.string :authentication_token
 
-      t.string :name
+      t.string :first_name
+      t.string :last_name
+
+      t.string :braintree_customer_id
 
       t.timestamps null: false
     end

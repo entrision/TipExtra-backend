@@ -11,10 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715175122) do
+ActiveRecord::Schema.define(version: 20150722135458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "drinks", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.integer  "menu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "drinks", ["menu_id"], name: "index_drinks_on_menu_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "drink_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "drink_id"
+    t.integer  "order_id"
+    t.integer  "qty",        default: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "line_items", ["drink_id"], name: "index_line_items_on_drink_id", using: :btree
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
+
+  create_table "menus", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,7 +68,9 @@ ActiveRecord::Schema.define(version: 20150715175122) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "authentication_token"
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "braintree_customer_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
