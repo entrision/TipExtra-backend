@@ -4,7 +4,7 @@ module Api
       before_filter :authenticate_api_user!
 
       def access_denied
-        render json: { message: 'Access Denied' }, status: 403
+        render json: { errors: { message: 'Access Denied' } }, status: 403
       end
 
       private

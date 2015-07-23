@@ -1,3 +1,3 @@
 class MenusSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :service_enabled
 end

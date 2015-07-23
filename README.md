@@ -96,7 +96,7 @@ Returns a list of drink menus. Succesful requests respond with a `HTTP
 Example Response:
 ```
 {"menus":[
-  {"id":1285,"name":"Brady's Bar"}
+  {"id":1285,"name":"Brady's Bar", "service_enabled": true}
 ]}
 ```
 
@@ -108,12 +108,44 @@ Example Response data:
 {"menu":{
   "id":1283,
   "name":"Brady's Bar",
+  "service_enabled": true,
   "drinks":[
     {"id":1323,"name":"Drink1","price":1000},
     {"id":1324,"name":"Drink2","price":1000},
     {"id":1325,"name":"Drink3","price":1000}
   ]}
 }
+```
+
+##### `PATCH /api/v1/menus/:id`
+Updates the menu. You must be authenticated as the Menu owner user in
+order to utilize this endpoint, others will receive `HTTP 403 Access
+Denied`.
+
+Example Request data:
+```
+{"menu": {
+  "service_enabled": false
+}}
+```
+
+Example Response data:
+```
+{"menu" : {
+  "id":33,
+  "name":"Brady's Bar",
+  "service_enabled":false,
+  "drinks":[
+    {"id":97,"name":"Drink1","price":1000},
+    {"id":98,"name":"Drink2","price":1000},
+    {"id":99,"name":"Drink3","price":1000}
+  ]
+}}
+```
+
+Example failure data:
+```
+{"errors":{"message":"Access Denied"}}
 ```
 
 ### Orders<a name="orders"></a>

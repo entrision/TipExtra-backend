@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   after_create :braintree_create_customer
 
   has_many :orders, dependent: :destroy
+  has_one :menu
 
   private
 

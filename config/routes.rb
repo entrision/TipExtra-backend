@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
       devise_scope :user do
         resources :users, only: [:show, :update, :destroy]
-        resources :menus, only: [:show, :index]
+        resources :menus, only: [:show, :index, :update]
         resources :orders, only: [:index, :show, :create]
         post :users,      to: 'registrations#create'
         post :sessions,   to: 'sessions#create'
