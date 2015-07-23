@@ -15,6 +15,7 @@ gem 'braintree'
 gem 'carrierwave'
 gem 'rmagick', require: false
 gem 'fog'
+gem 'exception_notification'
 
 group :staging, :production do
   gem 'unicorn'
