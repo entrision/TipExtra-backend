@@ -25,3 +25,8 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
 end
+
+# supress braintree standard output logging for tests
+logger = Logger.new("/dev/null")
+logger.level = Logger::INFO
+Braintree::Configuration.logger = logger
