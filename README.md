@@ -144,7 +144,7 @@ Example Response data:
 ```
 {"order" : {
   "id":1239,
-  "cost_total":6000,
+  "order_total":6000,
   "line_items" : [
     {"drink_id":123,"qty":2,"cost":2000},
     {"drink_id":124,"qty":3,"cost":3000},
