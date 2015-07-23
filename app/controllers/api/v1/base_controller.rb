@@ -23,8 +23,6 @@ module Api
       end
 
       def current_user?(user)
-        puts @user
-        puts user
         @user == user
       end
 

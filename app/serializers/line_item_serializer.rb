@@ -1,7 +1,11 @@
 class LineItemSerializer < ActiveModel::Serializer
-  attributes :id, :qty, :drink_id
+  attributes  :drink_id, :qty, :cost
 
   def drink_id
     object.drink.id
+  end
+
+  def cost
+    object.cost_total
   end
 end

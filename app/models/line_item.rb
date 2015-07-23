@@ -7,6 +7,10 @@ class LineItem < ActiveRecord::Base
   before_validation :associate_drink
   validates_presence_of :drink
 
+  def cost_total
+    self.drink.price * self.qty
+  end
+
   private
 
   def associate_drink

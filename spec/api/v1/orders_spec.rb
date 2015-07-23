@@ -6,8 +6,8 @@ describe Api::V1::OrdersController, type: :api do
   let!(:order2) { create(:order, user: user) }
   let!(:item1)  { create(:line_item, order: order1) }
   let!(:item2)  { create(:line_item, order: order1) }
-  let(:serialized_order1) { JSON.parse(OrderSerializer.new(order1).to_json) }
-  let(:serialized_order2) { JSON.parse(OrderSerializer.new(order2).to_json) }
+  let(:serialized_order1) { JSON.parse(OrdersSerializer.new(order1).to_json) }
+  let(:serialized_order2) { JSON.parse(OrdersSerializer.new(order2).to_json) }
   let(:serialized_item1)  { JSON.parse(LineItemSerializer.new(item1).to_json) }
   let(:serialized_item2)  { JSON.parse(LineItemSerializer.new(item2).to_json) }
 
@@ -21,7 +21,7 @@ describe Api::V1::OrdersController, type: :api do
     end
 
     it 'returns orders' do
-      expect(json["orders"]).to include(serialized_order1["order"], serialized_order2["order"])
+      expect(json["orders"]).to include(serialized_order1["orders"], serialized_order2["orders"])
     end
   end
 
@@ -101,6 +101,6 @@ describe Api::V1::OrdersController, type: :api do
   end
 
   def li_return_fields
-    ['id', 'qty', 'drink_id']
+    ['drink_id', 'qty', 'cost']
   end
 end

@@ -2,7 +2,7 @@ class Api::V1::OrdersController < Api::V1::BaseController
   before_filter :correct_user, only: [:show]
 
   def index
-    respond_with current_user.orders
+    respond_with current_user.orders, each_serializer: OrdersSerializer
   end
 
   def show
