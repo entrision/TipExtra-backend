@@ -18,7 +18,7 @@ class LineItem < ActiveRecord::Base
 
     if self.drink_id
       drink = Drink.find(self.drink_id)
-      self.drink = drink
+      self.drink = drink if drink.menu.service_enabled
     end
   end
 end

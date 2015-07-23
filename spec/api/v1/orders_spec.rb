@@ -98,6 +98,23 @@ describe Api::V1::OrdersController, type: :api do
         expect(last_response.body['errors']).not_to be_blank
       end
     end
+
+    context 'menu service disabled' do
+      let!(:menu) { create(:menu, service_enabled: false) }
+      let!(:drink1) { create(:drink, menu: menu) }
+
+      before do
+        post "/api/v1/orders", order: {
+          line_items_attributes: [
+            { drink_id: drink1.id, qty: 2 }
+          ]
+        }
+      end
+
+      it 'doesnt work' do
+        expect(last_response.status).to eq(422)
+      end
+    end
   end
 
   def li_return_fields

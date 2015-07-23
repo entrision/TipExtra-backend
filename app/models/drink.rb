@@ -3,5 +3,5 @@ class Drink < ActiveRecord::Base
   has_one    :image,  dependent: :destroy
   has_many   :orders, through: :line_items
 
-  validates_presence_of :name
+  validates_presence_of :name, :menu
 end
