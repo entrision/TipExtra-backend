@@ -6,7 +6,9 @@ Rails.application.routes.draw do
         resources :users, only: [:show, :update, :destroy]
         resources :menus, only: [:show, :index]
         resources :orders, only: [:index, :show, :create]
-        post :users,  to: 'registrations#create'
+        post :users,      to: 'registrations#create'
+        post :sessions,   to: 'sessions#create'
+        delete :sessions, to: 'sessions#destroy'
       end
     end
   end

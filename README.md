@@ -12,11 +12,11 @@ sections below for more details.
 # API Endpoints
 The following lists the API's current endpoints, their associated
 requests for interacting with them, and expected request formatting and
-reults. The API current has an endpoint for [Users](###Users),
-[Sessions](###Sessions), [Menus](###Menus), [Orders](###Orders), and
-[Drinks](###Drinks)
+reults. The API current has an endpoint for [Users](#users),
+[Sessions](#Sessions), [Menus](#Menus), [Orders](#Orders), and
+[Drinks](#Drinks)
 
-### Users
+### Users<a name="users"></a>
 
 ##### `POST /api/v1/users`
 Creates a new user record. Succesful requests respond with a `HTTP 201`
@@ -52,9 +52,42 @@ Example failure Response data:
 }}
 ```
 
-### Sessions
+### Sessions<a name="sessions"></a>
+Sign users in and out.
 
-### Menus
+##### `POST /api/v1/sessions`
+Signs a user in. Successful requests respond with `HTTP 200`.
+
+Example Request Data:
+```
+{"user":{
+  "email"    : "guy@testman.com",
+  "password" : "p4ssw0rd"
+}}
+```
+
+Example Response data:
+```
+{"user" : {
+  "id"                    : 733,
+  "first_name"            : "Guy",
+  "last_name"             : "Testman",
+  "email"                 : "test_1@tipextra.com",
+  "authentication_token"  : "-tBaDFjDoTzS2snzJiJa",
+  "braintree_customer_id" : "23237209"}}
+```
+
+Example failure response data:
+```
+{"errors" :
+  {"login" : ["Invalid email or password"]
+}}
+```
+
+##### `DELETE /api/v1/sessions`
+Signs a user out. This clears the auth token from the database. Successful requests respond with `HTTP 204`.
+
+### Menus<a name="menus"></a>
 
 ##### `GET /api/v1/menus`
 Returns a list of drink menus. Succesful requests respond with a `HTTP
@@ -70,7 +103,7 @@ Example Response:
 ##### `GET /api/v1/menus/:id`
 Returns a drink menu resource, including drink information.
 
-Example Response:
+Example Response data:
 ```
 {"menu":{
   "id":1283,
@@ -83,7 +116,7 @@ Example Response:
 }
 ```
 
-### Orders
+### Orders<a name="orders"></a>
 
 ##### `GET /api/v1/orders`
 Returns a list of the authenticated user's orders.
@@ -160,4 +193,4 @@ Example Failure response data:
 }}
 ```
 
-### Drinks
+### Drinks<a name="drinks"></a>
