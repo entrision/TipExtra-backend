@@ -111,8 +111,12 @@ describe Api::V1::OrdersController, type: :api do
         }
       end
 
-      it 'doesnt work' do
+      it 'returns invalid status' do
         expect(last_response.status).to eq(422)
+      end
+
+      it 'returns error message' do
+        expect(last_response.body['errors']).not_to be_blank
       end
     end
   end
