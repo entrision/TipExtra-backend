@@ -1,15 +1,20 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.3'
 gem 'pg'
+
+gem 'capistrano'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
 
 gem 'devise'
 gem 'simple_token_authentication'
 gem 'active_model_serializers'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+group :staging, :production do
+  gem 'unicorn'
+end
 
 group :development, :test do
   gem 'rspec-rails'
