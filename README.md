@@ -110,9 +110,15 @@ Example Response data:
   "name":"Brady's Bar",
   "service_enabled": true,
   "drinks":[
-    {"id":1323,"name":"Drink1","price":1000},
-    {"id":1324,"name":"Drink2","price":1000},
-    {"id":1325,"name":"Drink3","price":1000}
+    {"id":97,"name":"Drink1","price":1000, "image":{
+      "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/drink1.jpg",
+      "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/thumb_drink1.jpg"}},
+    {"id":98,"name":"Drink2","price":1000, "image":{
+      "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/98/drink2.jpg",
+      "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/98/thumb_drink2.jpg"}},
+    {"id":99,"name":"Drink3","price":1000, "image":{
+      "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/99/drink3.jpg",
+      "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/99/thumb_drink3.jpg"}}
   ]}
 }
 ```
@@ -136,9 +142,15 @@ Example Response data:
   "name":"Brady's Bar",
   "service_enabled":false,
   "drinks":[
-    {"id":97,"name":"Drink1","price":1000},
-    {"id":98,"name":"Drink2","price":1000},
-    {"id":99,"name":"Drink3","price":1000}
+    {"id":97,"name":"Drink1","price":1000, "image":{
+      "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/drink1.jpg",
+      "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/thumb_drink1.jpg"}},
+    {"id":98,"name":"Drink2","price":1000, "image":{
+      "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/98/drink2.jpg",
+      "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/98/thumb_drink2.jpg"}},
+    {"id":99,"name":"Drink3","price":1000, "image":{
+      "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/99/drink3.jpg",
+      "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/99/thumb_drink3.jpg"}}
   ]
 }}
 ```
