@@ -2,8 +2,8 @@
 
 # Connecting to the API
 Requests to protected endpoints within the API must be issued with a
-standard token Authorization HTTP header e.g. `"Authorization" => "Token
-token=your-token"`
+standard token Authorization HTTP header e.g. `Authorization: Token
+token=your-token`
 
 A User's Authorization token will be included in the JSON payload
 returned at user creation, or upon session creation. Review those
@@ -223,6 +223,49 @@ Example Failure response data:
 {"errors":{
   "line_items.drink" : ["can't be blank"]
 }}
+```
+
+##### `GET /api/v1/menus/:menu_id/orders`
+Returns a list of non-complete orders placed from the menu ID passed in.
+The requesting user must be authenticated as the menu owner.
+
+Example Response data:
+```
+{"menu_orders":[
+  {"id":109,"drink_total":1,"order_total":1000},
+  {"id":110,"drink_total":1,"order_total":1000}
+]}
+```
+
+##### `GET /api/v1/menus/:menu_id/orders/:order_id`
+Returns full order information for the order ID passed in.
+The requesting user must be authenticated as the menu owner.
+```
+{"order":
+  {"id":239,"order_total":1000,"line_items":[
+    {"drink_id":235,"qty":1,"cost":1000}
+  ]}
+}
+```
+##### `PATCH /api/v1/menus/:menu_id/orders/:order_id`
+Updates the order. You must be authenticated as the Menu owner user in
+order to utilize this endpoint, others will receive `HTTP 403 Access
+Denied`.
+
+Example Request data:
+```
+{"order": {
+  "complete": true
+}}
+```
+
+Example Response data:
+```
+{"order":
+  {"id":239,"order_total":1000,"line_items":[
+    {"drink_id":235,"qty":1,"cost":1000}
+  ]}
+}
 ```
 
 ### Drinks<a name="drinks"></a>
