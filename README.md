@@ -13,7 +13,7 @@ sections below for more details.
 The following lists the API's current endpoints, their associated
 requests for interacting with them, and expected request formatting and
 reults. The API current has an endpoint for [Users](#users),
-[Sessions](#Sessions), [Menus](#Menus), [Orders](#Orders), and
+[Sessions](#Sessions), [Menus](#Menus), [Orders](#Orders), [Braintree](#braintree) and
 [Drinks](#Drinks)
 
 ### Users<a name="users"></a>
@@ -281,3 +281,15 @@ Example Response data:
 ```
 
 ### Drinks<a name="drinks"></a>
+
+### Braintree<a name="braintree"></a>
+Endpoints relating to Braintree interactions.
+
+##### `GET /api/v1/get_token`
+Generates a Braintree client token. The Braintree docs say this should
+be refreshed regularly, perhaps everytime the app is opened..?
+
+Example Response data:
+```
+{"token":"eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiIxNGUxMzYxYWY1Y2Q3NTFlNDFkZDUyMzk0ZWY4OTY1MmEyNGMxY2YwMjRkNGZkZmMwNTQwYWIyOGJhZjAxOGVlfGNyZWF0ZWRfYXQ9MjAxNS0wNy0yOVQxODo0NjoxOC41MTI4OTQyNDErMDAwMFx1MDAyNm1lcmNoYW50X2lkPTNndHNqbWRuenZreWZrdzZcdTAwMjZwdWJsaWNfa2V5PXNkbno3N3RqamRqYm15a3ciLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvM2d0c2ptZG56dmt5Zmt3Ni9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzLzNndHNqbWRuenZreWZrdzYvY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIn0sInRocmVlRFNlY3VyZUVuYWJsZWQiOnRydWUsInRocmVlRFNlY3VyZSI6eyJsb29rdXBVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvM2d0c2ptZG56dmt5Zmt3Ni90aHJlZV9kX3NlY3VyZS9sb29rdXAifSwicGF5cGFsRW5hYmxlZCI6dHJ1ZSwicGF5cGFsIjp7ImRpc3BsYXlOYW1lIjoiRW50cmlzaW9uLCBMTEMiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsIm1lcmNoYW50QWNjb3VudElkIjoiZW50cmlzaW9ubGxjIiwiY3VycmVuY3lJc29Db2RlIjoiVVNEIn0sImNvaW5iYXNlRW5hYmxlZCI6ZmFsc2UsIm1lcmNoYW50SWQiOiIzZ3Rzam1kbnp2a3lma3c2IiwidmVubW8iOiJvZmYifQ=="}
+```

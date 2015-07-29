@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
 
+      get '/client_token', to: 'braintree#get_token'
+
       devise_scope :user do
         resources :users,       only: [:show, :update, :destroy]
         resources :menus,       only: [:index, :show, :update]
