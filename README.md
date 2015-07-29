@@ -285,7 +285,7 @@ Example Response data:
 ### Braintree<a name="braintree"></a>
 Endpoints relating to Braintree interactions.
 
-##### `GET /api/v1/get_token`
+##### `GET /api/v1/client_token`
 Generates a Braintree client token. The Braintree docs say this should
 be refreshed regularly, perhaps everytime the app is opened..?
 
