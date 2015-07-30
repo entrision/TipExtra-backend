@@ -46,7 +46,7 @@ describe Api::V1::MenuOrdersController, type: :api do
     end
   end
 
-  describe 'GET /api/v1/menus/:menu_id/orders/:order_id' do
+  describe 'GET /api/v1/menus/:menu_id/orders/:id' do
     context 'as menu owner' do
       before { get "/api/v1/menus/#{menu.id}/orders/#{order1.id}" }
 
@@ -78,7 +78,7 @@ describe Api::V1::MenuOrdersController, type: :api do
   end
 
 
-  describe 'PATCH /api/v1/menus/:menu_id/orders/:order_id' do
+  describe 'PATCH /api/v1/menus/:menu_id/orders/:id' do
     context 'as memnu owner' do
       before { patch "/api/v1/menus/#{menu.id}/orders/#{order1.id}", order: { complete: true } }
 

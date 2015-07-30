@@ -21,7 +21,7 @@ class Api::V1::MenuOrdersController < Api::V1::BaseController
   end
 
   def order
-    Order.find(params[:order_id])
+    Order.find(params[:id])
   end
 
   def order_params
