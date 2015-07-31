@@ -168,8 +168,8 @@ Returns a list of the authenticated user's orders.
 Example Response data:
 ```
 {"orders" : [
-  {"id":985,"drink_total":2,"order_total":2000},
-  {"id":986,"drink_total":5,"order_total":4750}
+  {"id":985,"drink_total":2,"customer_name": "Guy Testman", "order_total":2000},
+  {"id":986,"drink_total":5,"customer_name": "Guy Testman", "order_total":4750}
 ]}
 ```
 
@@ -180,6 +180,7 @@ Example Response data:
 ```
 {"order" : {
   "id":1109,
+  "customer_name": "Guy Testman"
   "line_items":[
     {
       "drink_id":1544,
@@ -222,6 +223,7 @@ Example Response data:
 {"order" : {
   "id":1239,
   "order_total":6000,
+  "customer_name": "Guy Testman"
   "line_items" : [
     {"drink_id":123,"qty":2,"cost":2000},
     {"drink_id":124,"qty":3,"cost":3000},
@@ -244,8 +246,10 @@ The requesting user must be authenticated as the menu owner.
 Example Response data:
 ```
 {"menu_orders":[
-  {"id":109,"drink_total":1,"order_total":1000},
-  {"id":110,"drink_total":1,"order_total":1000}
+  {"id":109,"drink_total":1,"order_total":1000, "customer_name": "Guy
+  Testman"},
+  {"id":110,"drink_total":1,"order_total":1000, "customer_name": "Guy
+  Testman"}
 ]}
 ```
 
@@ -254,7 +258,8 @@ Returns full order information for the order ID passed in.
 The requesting user must be authenticated as the menu owner.
 ```
 {"order":
-  {"id":239,"order_total":1000,"line_items":[
+  {"id":239,"order_total":1000, "customer_name": "Guy Testman",
+  "line_items":[
     {"drink_id":235,"qty":1,"cost":1000}
   ]}
 }
@@ -275,7 +280,7 @@ Example Response data:
 ```
 {"order":
   {"id":239,"order_total":1000,"line_items":[
-    {"drink_id":235,"qty":1,"cost":1000}
+    {"drink_id":235,"qty":1,"cost":1000, "customer_name": "Guy Testman"}
   ]}
 }
 ```
