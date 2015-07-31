@@ -183,13 +183,29 @@ Example Response data:
   "customer_name": "Guy Testman"
   "line_items":[
     {
-      "drink_id":1544,
+      "id":1544,
       "qty":1,
-      "cost":1000
+      "cost":1000,
+      "drink": {
+        "id":165,
+        "name":"Drink9",
+        "price":1000,
+        "image": {
+          "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/drink9.jpg",
+          "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/thumb_drink9.jpg"}
+      }
     },{
-      "drink_id":1545,
+      "id":1545,
       "qty":1,
       "cost":1000
+      "drink": {
+        "id":166,
+        "name":"Drink10",
+        "price":1000,
+        "image": {
+          "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/drink10.jpg",
+          "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/thumb_drink10.jpg"}
+      }
     }
   ]
 }}
@@ -257,12 +273,22 @@ Example Response data:
 Returns full order information for the order ID passed in.
 The requesting user must be authenticated as the menu owner.
 ```
-{"order":
-  {"id":239,"order_total":1000, "customer_name": "Guy Testman",
-  "line_items":[
-    {"drink_id":235,"qty":1,"cost":1000}
-  ]}
-}
+{"order":{
+  "id":1109,
+  "customer_name": "Guy Testman"
+  "line_items":[ {
+    "id":1544,
+    "qty":1,
+    "cost":1000,
+    "drink": {
+      "id":165,
+      "name":"Drink9",
+      "price":1000,
+      "image": {
+        "image_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/drink9.jpg",
+        "thumb_url":"https://entrision-tip-extra-test.s3.amazonaws.com/uploads/image/image/97/thumb_drink9.jpg"}}
+  }
+}}
 ```
 ##### `PATCH /api/v1/menus/:menu_id/orders/:order_id`
 Updates the order. You must be authenticated as the Menu owner user in

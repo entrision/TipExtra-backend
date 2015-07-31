@@ -122,6 +122,6 @@ describe Api::V1::OrdersController, type: :api do
   end
 
   def li_return_fields
-    ['drink_id', 'qty', 'cost']
+    ['id', 'qty', 'cost', 'drink']
   end
 end
