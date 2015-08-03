@@ -16,6 +16,7 @@ gem 'carrierwave'
 gem 'rmagick', require: false
 gem 'fog'
 gem 'exception_notification'
+gem 'sidekiq'
 
 group :staging, :production do
   gem 'unicorn'
