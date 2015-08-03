@@ -5,6 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'rspec/active_job'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -22,11 +23,19 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   #config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryGirl::Syntax::Methods
+  config.include ActiveJob::TestHelper, type: :job
+  config.include RSpec::ActiveJob
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
+
+  # clear active job queues
+  config.after(:each, type: :job) do
+    ActiveJob::Base.queue_adapter.enqueued_jobs = []
+    ActiveJob::Base.queue_adapter.performed_jobs = []
+  end
 end
 
 # supress braintree standard output logging for tests
-logger = Logger.new("/dev/null")
-logger.level = Logger::INFO
-Braintree::Configuration.logger = logger
+#logger = Logger.new("/dev/null")
+#logger.level = Logger::INFO
+#Braintree::Configuration.logger = logger

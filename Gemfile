@@ -24,6 +24,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rspec-activejob'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'byebug'
