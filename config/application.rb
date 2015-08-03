@@ -34,5 +34,8 @@ module TipExtraBackend
 
     # Disable assets
     config.assets.enabled = false
+
+    # ActiveJob Adapter
+    config.active_job.queue_adapter = :sidekiq
   end
 end

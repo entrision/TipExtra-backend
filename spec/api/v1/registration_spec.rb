@@ -38,9 +38,6 @@ describe Api::V1::RegistrationsController, type: :api do
         expect(json["user"]["last_name"]).to  eq('Testman')
       end
 
-      it 'creates Braintree customer' do
-        expect(User.last.braintree_customer_id).to be_present
-      end
     end
 
   end
