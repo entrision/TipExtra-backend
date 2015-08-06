@@ -7,6 +7,7 @@ gem 'capistrano'
 gem 'capistrano-rvm'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
+gem 'capistrano-sidekiq'
 
 gem 'devise'
 gem 'simple_token_authentication'
