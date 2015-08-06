@@ -10,7 +10,7 @@ http_interactions:
         <customer>
           <first-name>Guy</first-name>
           <last-name>Testman</last-name>
-          <email>test_1@tipextra.com</email>
+          <email>test_125@tipextra.com</email>
         </customer>
     headers:
       Accept-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Mon, 03 Aug 2015 14:53:33 GMT
+      - Thu, 06 Aug 2015 16:31:31 GMT
       Content-Type:
       - application/xml; charset=utf-8
       Transfer-Encoding:
@@ -50,25 +50,25 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"b0989f1bd5e0c6d99f835824a22ae9e6"'
+      - '"c7ee5a3b8224a3c10eabfe64f2fb6c7b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2afee7db681ddf9151daaa3721f51171
+      - d454a8ac909bf67ddcc8f27e9d353e15
       X-Runtime:
-      - '0.132643'
+      - '0.240238'
       X-Frame-Options:
       - SAMEORIGIN
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAG2Av1UAA5SRQXOCMBSE7/4KJvcISGnVCdhT+wfspZfOK3loKglM8lDp
-        r29AK85w8ri73yY788TmrKvgiNap2mQsnkcsQFPUUpldxj62b3zJNvlMFK2j
-        WqPNZ0EglMyTdPWyihfPIvSi93xW7MEQ78MduR8tze/x0JWHk4fu054ulXXE
-        DWjM39tOhHe6jyv4V1t0pMGIcLR6oKh1A6YLjKoyRrZFFg4+alBVTr70Fb+S
-        avBMFuaeFuEl6qFmXxucVEs4T7wTfjtFU7awCISSAwXUNZgx6SUpjSxfRHHK
-        oyWPkm38tE6TdZJ8inAsDP22kY/1x8Ll/+EavFRYSXebJBXxAqx010fBWuiu
-        i0FKi87hJPPbbqf9AwAA//8DAOHnPO8NAgAA
+        H4sIAOOLw1UAA5SRvW6DMBDH9zwF8u4YiILSypBO7QukS5fqio/EDTbIPpLQ
+        p68haYjEVMnL/+PnO+nk9mLq6ITO68bmLFnGLEJbNkrbfc7ed698w7bFQpad
+        p8agKxZRJLUq0qdsnWWbTIogBi9k5QEs8aBXe/LfRtmf07GvjudQekyHdqWd
+        J27BYPHW9VI86CGu4U/t0JMBK8VkDYWyMS3YPrK6zhm5DpkYfTSg64IC9Jmk
+        6xfSLV7IwTL0pbiGQ609NBZncAWXmXfGL69p3i0dAqHiQBH1LeZMBUnaICvS
+        OFnzeMPjbJdkz6skvA8pJmDku1b9j5+A6/zxHrzSWCt/X0lp4iU45W+fgnPQ
+        3zYGpRx6j7Ms7HY/7i8AAAD//wMA0cgT8g8CAAA=
     http_version: 
-  recorded_at: Mon, 03 Aug 2015 14:53:33 GMT
+  recorded_at: Thu, 06 Aug 2015 16:31:31 GMT
 recorded_with: VCR 2.9.3

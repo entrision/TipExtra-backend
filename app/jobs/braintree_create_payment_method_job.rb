@@ -4,7 +4,10 @@ class BraintreeCreatePaymentMethodJob < ActiveJob::Base
   def perform(user, nonce)
     result = Braintree::PaymentMethod.create(
       customer_id: user.braintree_customer_id,
-      payment_method_nonce: nonce
+      payment_method_nonce: nonce,
+      options: {
+        make_default: true
+      }
     )
 
     if result.success?

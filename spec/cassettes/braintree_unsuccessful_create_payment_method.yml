@@ -10,6 +10,9 @@ http_interactions:
         <payment-method>
           <customer-id>35979126</customer-id>
           <payment-method-nonce>invalid-nonce</payment-method-nonce>
+          <options>
+            <make-default type="boolean">true</make-default>
+          </options>
         </payment-method>
     headers:
       Accept-Encoding:
@@ -28,7 +31,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Mon, 03 Aug 2015 15:40:06 GMT
+      - Thu, 06 Aug 2015 16:31:32 GMT
       Content-Type:
       - application/xml; charset=utf-8
       Transfer-Encoding:
@@ -51,22 +54,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - b9b4ece3a5b85976d31f110c58a3d754
+      - 217b0d21bd365e319f33bb6c31f80b07
       X-Runtime:
-      - '0.133158'
+      - '0.070177'
       X-Frame-Options:
       - SAMEORIGIN
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAFaLv1UAA5RSy26DMBC88xXId0Jo1DSRwLn1C5pz5MA2ccFrtHZI6dfX
-        gMmrtFJvnp3x7njW6eZTVWEDZKTGjCWzOQsBc11IPGRs+/YardiGB6moZQRE
-        miICU2s0wIMwTPuS6Y4XENq2howJItGy2FO1aBWgjRTYoy6G4vSNkRvZK3YV
-        5wv4epHMV2ncn29JYS3J/cmC72datdcV4372bpi9Q405pPFFfddDgTHiAHyL
-        JeozhlN3Z2k8yq5e4zuzHo7BxD+ff6tw6ZBQ5u+o8pOxWgFFsuCL5/XLOnla
-        uhBuqqPyvkHUe+YSG1FJjx4Nec2vZrtwc+s+CM8JhO3SG2Dgt4KWdFUBPWRt
-        ui1duMAnTPlRuPbdOw7WfKgCv5qyfS/Pyy7YKxsMZsZo/r0b53Li034DAAD/
-        /wMAU4P0QfECAAA=
+        H4sIAOSLw1UAA5RSQW7CMBC85xWR7yZQVApSMLe+oJyRSRZIE9vR2oGmr69N
+        7JDQqFJv3p3xenbG6e5LVPEVUBdKbsliNicxyEzlhTxvyf7jna7JjkUprwsK
+        iAopgq6V1MCiOE7vLe2OfRGbtoYt4Yi8JYmHat4KkIYKMBeVd83pGwEL6KO2
+        HasL2Ga5mK/T5H4egtwYLI6NAT9Pt+KoKsL824fu7YNUMoM06dmjGQK05mdg
+        e1lKdZPx1N1ZmgTaQ2syEuvLYEzye/0hw7qDXOi/rcoabZQApEXOlq+bt83i
+        ZWVNGHQDczyA3jWzQl55VfjqWZDnhAGqNvYz6MF2gpdAczjxpjLMYGMnjFr9
+        2qOrU3u7nDLHYRkCNy6Irox8wNKgqirAp9i0C7zHIh8WZhduxztLzkZ/ilx+
+        X8v2VN5WLqMHGnVigsv/jtmqnPj/PwAAAP//AwClPLrpPAMAAA==
     http_version: 
-  recorded_at: Mon, 03 Aug 2015 15:40:06 GMT
+  recorded_at: Thu, 06 Aug 2015 16:31:32 GMT
 recorded_with: VCR 2.9.3

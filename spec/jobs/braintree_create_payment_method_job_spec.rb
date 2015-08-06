@@ -13,8 +13,9 @@ RSpec.describe BraintreeCreatePaymentMethodJob, type: :job do
   end
 
   context 'with invalid nonce' do
-    it 'raises exception' do
+    it 'does not create payment method token' do
       VCR.use_cassette('braintree_unsuccessful_create_payment_method') do
+        BraintreeCreatePaymentMethodJob.perform_now(user, 'invalid-nonce')
         expect(user.reload.braintree_payment_method_token).not_to be_present
         #expect{
           #BraintreeCreatePaymentMethodJob.perform_now(user, 'invalid-nonce')

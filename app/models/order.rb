@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
   has_many :drinks,     through: :line_items
   has_many :line_items, dependent: :destroy
 
+  after_update :process_transaction
+
   accepts_nested_attributes_for :line_items
   validates_presence_of :user
 
@@ -16,5 +18,13 @@ class Order < ActiveRecord::Base
     total = 0
     self.line_items.each { |i| total = total + i.qty }
     total
+  end
+
+  private
+
+  def process_transaction
+    if self.complete_changed?
+      BraintreeTransactionJob.perform_later self
+    end
   end
 end
