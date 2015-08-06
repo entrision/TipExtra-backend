@@ -18,6 +18,8 @@ gem 'fog'
 gem 'exception_notification'
 gem 'sidekiq'
 
+gem 'net-ssh', '2.10.1.rc1'
+
 group :staging, :production do
   gem 'unicorn'
 end
