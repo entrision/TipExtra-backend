@@ -12,7 +12,9 @@ class BraintreeCreateCustomerJob < ActiveJob::Base
       user.braintree_customer_id = result.customer.id
       user.save!
     else
-      p result.errors
+      result.errors.each do |err|
+        Rails.logger.error "Unable to create Customer: #{err.message}"
+      end
     end
   end
 end

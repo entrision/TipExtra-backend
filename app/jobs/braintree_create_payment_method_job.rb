@@ -14,7 +14,9 @@ class BraintreeCreatePaymentMethodJob < ActiveJob::Base
       user.braintree_payment_method_token = result.payment_method.token
       user.save!
     else
-      p result.errors
+      result.errors.each do |err|
+        Rails.logger.error "Unable to create Payment Method: #{err.message}"
+      end
     end
   end
 end

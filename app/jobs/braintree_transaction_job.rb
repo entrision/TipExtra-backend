@@ -8,10 +8,14 @@ class BraintreeTransactionJob < ActiveJob::Base
     )
 
     if result.success?
-      p "Transaction processed for order #{order.id}"
+      Rails.logger.error  "Transaction processed for order #{order.id}"
+
       true
     else
-      p result.errors
+      result.errors.each do |err|
+        Rails.logger.error "Unable to create Payment Method: #{err.message}"
+      end
+
       false
     end
   end
